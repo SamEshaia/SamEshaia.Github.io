@@ -100,7 +100,7 @@
 <pre><code>sudo crontab -u www-data -e
 </code></pre>
 <p>Add this line to run <code>cron.php</code> every 5 minutes (adjust path as needed):</p>
-<pre><code>*/5 * * * * php -f /var/www/cloud.salmonlabs.org/cron.php
+<pre><code>*/5 * * * * php -f /var/www/nextcloud/cron.php
 </code></pre>
 <p>Save and exit. Verify with:</p>
 <pre><code>sudo crontab -u www-data -l
@@ -116,18 +116,18 @@
 <ul>
   <li>You can also set it via CLI:</li>
 </ul>
-<pre><code>sudo -u www-data php /var/www/cloud.salmonlabs.org/occ config:system:set maintenance_window_start --type=integer --value=1
+<pre><code>sudo -u www-data php /var/www/nextcloud/occ config:system:set maintenance_window_start --type=integer --value=1
 </code></pre>
 <ul>
   <li>Check current value:</li>
 </ul>
-<pre><code>sudo -u www-data php /var/www/cloud.salmonlabs.org/occ config:system:get maintenance_window_start
+<pre><code>sudo -u www-data php /var/www/nextcloud/occ config:system:get maintenance_window_start
 </code></pre>
 
 <h2>4. Safe Maintenance Commands to Run Manually</h2>
 <p>Run these commands as <code>www-data</code> user to clean caches, fix common issues, and trigger cron jobs manually:</p>
-<pre><code>sudo -u www-data php /var/www/cloud.salmonlabs.org/occ maintenance:repair
-sudo -u www-data php /var/www/cloud.salmonlabs.org/occ background:cron
+<pre><code>sudo -u www-data php /var/www/nextcloud/occ maintenance:repair
+sudo -u www-data php /var/www/nextcloud/occ background:cron
 </code></pre>
 <p><strong>Notes:</strong></p>
 <ul>
@@ -141,16 +141,16 @@ sudo -u www-data php /var/www/cloud.salmonlabs.org/occ background:cron
 <ul>
   <li>Check the current maintenance window config:</li>
 </ul>
-<pre><code>sudo -u www-data php /var/www/cloud.salmonlabs.org/occ config:system:get maintenance_window_start
+<pre><code>sudo -u www-data php /var/www/nextcloud/occ config:system:get maintenance_window_start
 </code></pre>
 <ul>
   <li>Enable and then disable maintenance mode to force config reload and refresh UI:</li>
 </ul>
-<pre><code>sudo -u www-data php /var/www/cloud.salmonlabs.org/occ maintenance:mode --on
-sudo -u www-data php /var/www/cloud.salmonlabs.org/occ maintenance:mode --off
+<pre><code>sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --on
+sudo -u www-data php /var/www/nextcloud/occ maintenance:mode --off
 </code></pre>
 
-<h2>7. Summary and Best Practices</h2>
+<h2>6. Summary and Best Practices</h2>
 <ul>
   <li>Always use cron (or systemd timer) to run Nextcloud background jobs regularly — avoid relying on AJAX or Webcron for production.</li>
   <li>Set <code>maintenance_window_start</code> in config to low-usage hours (example: <code>1</code> for 1am UTC).</li>
