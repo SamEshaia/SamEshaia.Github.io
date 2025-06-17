@@ -1,106 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salmon Labs Docs</title>
   <style>
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: system-ui, sans-serif;
       background-color: #f8f9fa;
+      margin: 0;
       color: #333;
     }
     header {
-      background-color: #005a9c;
-      padding: 1.5rem;
+      background-color: #1c2c4c;
       color: #fff;
+      padding: 1.5rem;
+      text-align: center;
     }
     header h1 {
       margin: 0;
       font-size: 2rem;
     }
     nav {
-      background-color: #004b85;
-      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      background: #0e1a2f;
+      padding: 0.5rem 0;
     }
     nav a {
       color: #fff;
       text-decoration: none;
-      margin-right: 1rem;
+      margin: 0 1rem;
       font-weight: bold;
     }
-    .container {
-      max-width: 1000px;
+    main {
+      max-width: 960px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
-    h2 {
-      color: #005a9c;
-    }
     .card {
-      background-color: #fff;
+      background: #fff;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
       padding: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
     footer {
       text-align: center;
-      padding: 2rem;
-      background: #eaeaea;
+      padding: 1rem;
+      background-color: #e9ecef;
       font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Salmon Labs Documentation</h1>
-    <p>Your personal infrastructure & technology knowledgebase</p>
+    <p>A collection of guides, notes, and knowledge.</p>
   </header>
   <nav>
-    <a href="#docs">Docs</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <a href="#linux">Linux</a>
+    <a href="#windows">Windows</a>
+    <a href="#networking">Networking</a>
+    <a href="#activedirectory">Active Directory</a>
+    <a href="#ticketing">Ticketing</a>
   </nav>
-  <div class="container">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>I graduated from Oregon State University in 2019 with a Bachelor's degree in Business Administration while working part-time. My favorite courses included Business Process Management I & II. I secured second place in the competitive group-work simulation class, Integrative Strategic Experience.</p>
-      <p>Following graduation, I spent over five years in the Drivers Education industry, where I significantly improved the planning and output of Teen Programs through strategic collaboration and system improvements. I hired a programmer to assist with technical enhancements, which sparked my interest in the tech industry.</p>
-      <p>In 2021, I built and managed a supercomputer with 8+ GPUs and an ASIC. By 2022, I transitioned fully into technology, working as a Web Developer and now in IT support.</p>
-      <p>My goal is to lead a high-performing tech team while constantly learning and innovating in the technology space.</p>
-    </div>
+  <main>
+    <section class="card">
+      <h2>About This Site</h2>
+      <p>This website is designed to be a centralized hub for documentation and knowledge sharing related to Linux, system administration, networking, Windows, Active Directory, ticketing systems, and other IT topics. Whether you're referencing guides, writing notes, or learning something new, this site aims to be a practical and evolving resource.</p>
+    </section>
 
-    <div class="card" id="docs">
-      <h2>Documentation</h2>
-      <ul>
-        <li><a href="#">Nextcloud Cron Job Setup</a></li>
-        <li><a href="#">Infrastructure Notes</a></li>
-        <li><a href="#">Server Builds & Networking</a></li>
-        <li><a href="#">Automation & Scripts</a></li>
-      </ul>
-    </div>
+    <section class="card" id="linux">
+      <h2>Linux</h2>
+      <p>Articles, guides, and scripts for administering Linux systems, from bash tips to package management and security.</p>
+    </section>
 
-    <div class="card" id="projects">
-      <h2>Current Projects</h2>
-      <ul>
-        <li>Private Nextcloud server with Redis and MariaDB</li>
-        <li>Docker container orchestration for web services</li>
-        <li>Secure VPN and remote access setup</li>
-        <li>NAS & Backup automation</li>
-      </ul>
-    </div>
+    <section class="card" id="windows">
+      <h2>Windows</h2>
+      <p>Resources for managing Windows workstations and servers, including PowerShell commands, system tweaks, and deployment tools.</p>
+    </section>
 
-    <div class="card" id="contact">
-      <h2>Contact</h2>
-      <p>Interested in connecting? Reach out at <strong>samuel@salmonlabs.org</strong></p>
-    </div>
-  </div>
+    <section class="card" id="networking">
+      <h2>Networking</h2>
+      <p>Notes and configurations on LAN/WAN design, routing, DNS/DHCP, VLANs, and firewall rules.</p>
+    </section>
 
+    <section class="card" id="activedirectory">
+      <h2>Active Directory</h2>
+      <p>Guidance on managing users, GPOs, OU structure, authentication, and integrating services with AD.</p>
+    </section>
+
+    <section class="card" id="ticketing">
+      <h2>Ticketing</h2>
+      <p>Best practices and system documentation for ticketing platforms such as Freshservice, Jira, or GLPI.</p>
+    </section>
+  </main>
   <footer>
-    <p>&copy; 2025 Salmon Labs | Built with curiosity, code, and caffeine.</p>
+    &copy; 2025 Salmon Labs. All rights reserved.
   </footer>
 </body>
 </html>
